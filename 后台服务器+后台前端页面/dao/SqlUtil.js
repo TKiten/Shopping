@@ -114,6 +114,8 @@ function SqlUtil() {
             }
             call(result);
         });
+        //5,连接结束
+        connection.end();
     }
     this.deleteClothing=function (id,call) {
         var  userGetSql = 'DELETE FROM Clothings where id = '+id;
@@ -125,13 +127,15 @@ function SqlUtil() {
             }
             call(result);
         });
+        //5,连接结束
+        connection.end();
     }
-/*    //=======================================================================================
-    this.updataMens=function (productName1,productPrice1,Id1) {
-        //4,编写sql语句
-        var userModSql = 'UPDATE product_mens SET productName = ? ,productPrice = ? WHERE Id = ?';
 
-        var userModSql_Params = [ productName1, productPrice1, Id1];
+    this.changeClothingSort=function (ClothingSort_name, ClothingSort_fileKey,ClothingSort_introduce,id) {
+        //4,编写sql语句
+        var userModSql = 'UPDATE Clothing_Sort SET Clothing_Sort_Name = ?,Clothing_Sort_Img = ?,Clothing_Sort_Introduce= ? WHERE id = ?';
+
+        var userModSql_Params = [ClothingSort_name, ClothingSort_fileKey,ClothingSort_introduce,id];
         console.log(userModSql_Params);
         //5，更新操作
         connection.query(userModSql,userModSql_Params,function (err, result) {
@@ -143,11 +147,11 @@ function SqlUtil() {
         //5,连接结束
         connection.end();
     }
-    this.updataWomens=function (productName1,productPrice1,Id1) {
+    this.changeClothing=function (Clothing_Name,Clothing_Img,Clothing_Price,Clothing_Introduce,id) {
         //4,编写sql语句
-        var userModSql = 'UPDATE product_womens SET productName = ? ,productPrice = ? WHERE Id = ?';
+        var userModSql = 'UPDATE Clothings SET Clothing_Name = ?,Clothing_Img = ?,Clothing_Price = ?,Clothing_Introduce= ? WHERE id = ?';
 
-        var userModSql_Params = [ productName1, productPrice1, Id1];
+        var userModSql_Params = [Clothing_Name, Clothing_Img,Clothing_Price,Clothing_Introduce,id];
         console.log(userModSql_Params);
         //5，更新操作
         connection.query(userModSql,userModSql_Params,function (err, result) {
@@ -159,39 +163,6 @@ function SqlUtil() {
         //5,连接结束
         connection.end();
     }
-    this.updataSingle=function (productName1,productPrice1,Id1) {
-        //4,编写sql语句
-        var userModSql = 'UPDATE product_single SET productName = ? ,productPrice = ? WHERE Id = ?';
-
-        var userModSql_Params = [ productName1, productPrice1, Id1];
-        console.log(userModSql_Params);
-        //5，更新操作
-        connection.query(userModSql,userModSql_Params,function (err, result) {
-            if(err){
-                console.log('[INSERT ERROR] - ',err.message);
-                return;
-            }
-        });
-        //5,连接结束
-        connection.end();
-    }
-    this.updataCheckout=function (productName1,productPrice1,Id1) {
-        //4,编写sql语句
-        var userModSql = 'UPDATE product_checkout SET productName = ? ,productPrice = ? WHERE Id = ?';
-
-        var userModSql_Params = [ productName1, productPrice1, Id1];
-        console.log(userModSql_Params);
-        //5，更新操作
-        connection.query(userModSql,userModSql_Params,function (err, result) {
-            if(err){
-                console.log('[INSERT ERROR] - ',err.message);
-                return;
-            }
-        });
-        //5,连接结束
-        connection.end();
-    }
-    //==========================================================================================================*/
 }
 
 

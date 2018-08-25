@@ -1,0 +1,74 @@
+<!--logs.wxml-->
+<view class="box">
+
+  <!-- 搜索框 -->
+  <view class="header">
+    <view class='nav'>
+      <view class="select">
+        <input class="input" name="userName" placeholder="搜索商品名称/编号" bindinput="userNameInput" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 篩選欄 -->
+  <view class='saixuan'>
+    <p class='xinpin_p01'>新品</p>
+    <span class='sp1'></span>
+    <p class='xinpin_p01'>价格</p>
+    <span class='sp2'></span>
+    <p>销量</p>
+  </view>
+  
+  <!-- 展示商品 -->
+  <view class='clothes_sell'>
+    <view wx:if="{{index<4}}" wx:for="{{imgUrls}}" wx:key="index" class='clothes_sell_01 setright'>
+      <view bindtap="bindViewTap">
+        <image class='clothes_sell_img' src='{{item.Clothing_Img}}'></image>
+      </view>
+      <p class='sell_p_01'>{{item.Clothing_Introduce}}</p>
+      <p class='sell_p_02'>￥{{item.Clothing_Price}}</p>
+    </view>
+    <!-- <view class='clothes_sell_01'>
+      <view bindtap="bindViewTap">
+        <image class='clothes_sell_img' src='../../image/clothes_02.png'></image>
+      </view>
+      <p class='sell_p_01'>HLA/海澜之家白色上衣</p>
+      <p class='sell_p_02'>￥125</p>
+    </view>
+    <view class='clothes_sell_01 setright'>
+      <view bindtap="bindViewTap">
+        <image class='clothes_sell_img' src='../../image/clothes_03.png'></image>
+      </view>
+      <p class='sell_p_01'>HLA/海澜之家条纹上衣</p>
+      <p class='sell_p_02'>￥189</p>
+    </view>
+    <view class='clothes_sell_01'>
+      <view bindtap="bindViewTap">
+        <image class='clothes_sell_img' src='../../image/clothes_04.png'></image>
+      </view>
+      <p class='sell_p_01'>HLA/海澜之家白色上衣</p>
+      <p class='sell_p_02'>￥187</p>
+    </view>
+    <view class='clothes_sell_01 setright'>
+      <image class='clothes_sell_img' src='../../image/clothes_01.png'></image>
+      <p class='sell_p_01'>HLA/海澜之家条纹上衣</p>
+      <p class='sell_p_02'>￥169</p>
+    </view>
+    <view class='clothes_sell_01'>
+      <image class='clothes_sell_img' src='../../image/clothes_02.png'></image>
+      <p class='sell_p_01'>HLA/海澜之家白色上衣</p>
+      <p class='sell_p_02'>￥125</p>
+    </view>
+    <view class='clothes_sell_01 setright'>
+      <image class='clothes_sell_img' src='../../image/clothes_03.png'></image>
+      <p class='sell_p_01'>HLA/海澜之家条纹上衣</p>
+      <p class='sell_p_02'>￥189</p>
+    </view>
+    <view class='clothes_sell_01'>
+      <image class='clothes_sell_img' src='../../image/clothes_04.png'></image>
+      <p class='sell_p_01'>HLA/海澜之家白色上衣</p>
+      <p class='sell_p_02'>￥187</p>
+    </view> -->
+  </view>
+
+</view>

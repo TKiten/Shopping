@@ -1,0 +1,110 @@
+<!--index.wxml-->
+<view class="box">
+  <!-- 搜索框 -->
+  <view class="header">
+    <view class="select">
+      <input class="input" name="userName" placeholder="搜索商品名称/编号" bindinput="userNameInput" />
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view>
+    <swiper class="sroll_top_view" indicator-dots="{{indicatorDots}}" autoplay='{{autoplay}}' interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <view bindtap="bindViewTap">
+            <image bindtap="bindViewTap" src="{{item}}" class='img'></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 八个分类 -->
+  <view class='kinds'>
+     <view wx:if="{{index<8}}" wx:for="{{imgUrls_03}}" wx:key="index" class='kinds_01'>
+      <view bindtap="bindViewTap">
+        <image class='kinds_img' src='{{item.Clothing_Sort_Img}}'></image>
+        <p>{{item.Clothing_Sort_Name}}</p>
+      </view>
+    </view>
+    <!-- <view class='kinds_01'>
+      <view bindtap="bindViewTap">
+        <image class='kinds_img' src='../../image/02.png'></image>
+        <p>POLO</p>
+      </view>
+    </view>
+    <view class='kinds_01'>
+      <view bindtap="bindViewTap">
+        <image class='kinds_img' src='../../image/03.png'></image>
+        <p>短袖衬衫</p>
+      </view>
+    </view>
+    <view class='kinds_01'>
+      <view bindtap="bindViewTap">
+        <image class='kinds_img' src='../../image/04.png'></image>
+        <p>短袖针织</p>
+      </view>
+    </view>
+    <view class='kinds_01 settop'>
+      <view bindtap="bindViewTap">
+        <image class='kinds_img' src='../../image/05.png'></image>
+        <p>休闲中裤</p>
+      </view>
+    </view>
+    <view class='kinds_01 settop'>
+      <view bindtap="bindViewTap">
+        <image class='kinds_img' src='../../image/06.png'></image>
+        <p>牛仔中裤</p>
+      </view>
+    </view>
+    <view class='kinds_01 settop'>
+      <view bindtap="bindViewTap">
+        <image class='kinds_img' src='../../image/07.png'></image>
+        <p class='p_01'>九分裤</p>
+      </view>
+    </view>
+    <view class='kinds_01 settop'>
+      <view bindtap="bindViewTap">
+        <image class='kinds_img' src='../../image/08.png'></image>
+        <p class='p_02'>长裤</p>
+      </view>
+    </view> -->
+  </view>
+  <!-- 第二个轮播图 -->
+  <view>
+    <swiper class="sroll_top_view" indicator-dots="{{indicatorDots}}" autoplay='{{autoplay}}' interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls_02}}" wx:key="index">
+        <swiper-item>
+          <image bindtap="bindViewTap" src="{{item}}" class='img'></image>
+
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 商品展示 -->
+  <view class='clothes_sell'>
+    <view wx:if="{{index<4}}" wx:for="{{imgUrls_04}}" wx:key="index" class='clothes_sell_01 '>
+      <image bindtap="bindViewTap" class='clothes_sell_img' src='{{item.Clothing_Img}}'></image>
+      <p class='sell_p_01'>{{item.Clothing_Introduce}}</p>
+      <p class='sell_p_02'>￥{{item.Clothing_Price}}</p>
+    </view>
+    <!-- <view class='clothes_sell_01'>
+      <image class='clothes_sell_img' src='../../image/clothes_02.png'></image>
+      <p class='sell_p_01'>HLA/海澜之家白色上衣</p>
+      <p class='sell_p_02'>￥125</p>
+    </view>
+    <view class='clothes_sell_01 '>
+      <image class='clothes_sell_img' src='../../image/clothes_03.png'></image>
+      <p class='sell_p_01'>HLA/海澜之家条纹上衣</p>
+      <p class='sell_p_02'>￥189</p>
+    </view>
+    <view class='clothes_sell_01'>
+      <image class='clothes_sell_img' src='../../image/clothes_04.png'></image>
+      <p class='sell_p_01'>HLA/海澜之家白色上衣</p>
+      <p class='sell_p_02'>￥187</p>
+    </view> -->
+  </view>
+
+
+
+</view>

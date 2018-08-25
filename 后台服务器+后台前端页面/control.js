@@ -1,11 +1,13 @@
         var express = require('express');
         var app = express();
         var fs = require("fs");
-
+        var formidable = require('formidable');
         var bodyParser = require('body-parser');
         var multer  = require('multer');
 
         //1,接受表单的请求
+        app.use(bodyParser.json({limit:'50mb'}));
+        app.use(bodyParser.urlencoded({limit:'50mb',extended:true}));
         app.use(bodyParser.urlencoded({ extended: false }));
         //2,设置下载的地址
         app.use(multer({ dest: '/public/'}).array('image'));
@@ -226,5 +228,62 @@
 
         })
 
+        //服装类目添加页面查询
+        app.get('/change_Clothing_Sort', function (req, res) {
+            var ClothingSortName=req.body.ClothingSortName;
+            var ClothingSortImg=req.body.ClothingSortImg;
+            var ClothingSortIntroduce=req.body.ClothingSortIntroduce;
+            var ClothingSortId=req.body.ClothingSortId;
 
+                //1, 引入模块
+                var SqlUtil = require('./dao/SqlUtil');
+                //2,创建对象
+                sqlUtil = new SqlUtil();
+                sqlUtil.init();
+                //3,插入语句
+                sqlUtil.changeClothingSort(ClothingSortName, ClothingSortImg,ClothingSortIntroduce,ClothingSortId);
+            var result={
+                ok:1,
+            };
+            res.json(result);
+                res.redirect('./Clothing_Sort_gallery');
+
+        })
+
+
+
+        app.post('/upload', function (req, res) {
+            console.log("=====================")
+            var form = new formidable.IncomingForm();   //创建上传表单
+            form.encoding = 'utf-8';        //设置编辑
+            form.uploadDir = 'public/upload';     //设置上传目录
+            form.keepExtensions = true;     //保留后缀
+            form.maxFieldsSize = 2 * 1024 * 1024;   //文件大小
+            form.parse(req, function(err, fields, files) {
+
+                if (err) {
+                    res.locals.error = err;
+
+                    return;
+                }
+                //显示地址；
+                var img_file_path=files.uploadImage.path;
+                var img_fileKey = "HLZJ_ClothingSort"+new Date().getTime()+'img';
+                console.log(img_file_path);
+
+                //1, 引入腾讯模块
+                var QQUtil = require('./util/QQutil');
+                //2,创建对象
+                qqUtil = new QQUtil();
+                qqUtil.init();
+                //3,上传图片到云服务器
+                qqUtil.insert(img_fileKey,img_file_path,fs, function () {
+
+                })
+
+                res.json({
+                    "img_fileKey":img_fileKey
+                });
+            });
+        })
         var server = app.listen(8088)

@@ -1,0 +1,152 @@
+<view class="box">
+  <!-- 搜索框 -->
+  <view class="header">
+    <view class='nav'>
+      <view class="select">
+        <input class="input" name="userName" placeholder="搜索商品名称/编号" bindinput="userNameInput" />
+      </view>
+    </view>
+  </view>
+  <!-- 所有商品栏 -->
+  <view class='allgoods'>
+    <p class='allgoods_p1'>所有商品</p>
+    <p class='allgoods_p2' bindtap="bindViewTap">全部></p>
+  </view>
+  <!-- 秋季商品栏 -->
+  <view class='qiuji'>
+    <p class='qiuji_p1'>秋季新品</p>
+    <p class='allgoods_p2' bindtap="bindViewTap">全部></p>
+  </view>
+
+  <!-- 秋季服装 -->
+  <view class='qiucloth'>
+    <view wx:for="{{imgUrls_01}}" wx:key="index" class='qiucloth_view'>
+      <image bindtap="bindViewTap" class='qiu_img' src='{{item.Clothing_Img}}'></image>
+      <p class='taoxi'>{{item.Clothing_Introduce}}</p>
+    </view>
+    <!-- <view class='qiucloth_view'>
+      <image class='qiu_img' src='../../image/clokinds_02.png'></image>
+      <p class='taoxi'>单西</p>
+    </view>
+    <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/clokinds_02.png'></image>
+      <p class='taoxi'>单西</p>
+    </view>
+    <view class='qiucloth_view'>
+      <image class='qiu_img' src='../../image/clokinds_03.png'></image>
+      <p class='taoxi'>风衣</p>
+    </view>
+    <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/clokinds_04.png'></image>
+      <p class='taoxi_02'>真皮夹克</p>
+    </view>
+    <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/clokinds_05.png'></image>
+      <p class='taoxi'>夹克</p>
+    </view>
+    <view class='qiucloth_view'>
+      <image class='qiu_img' src='../../image/clokinds_06.png'></image>
+      <p class='taoxi_02'>牛仔外套</p>
+    </view>
+    <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/clokinds_07.png'></image>
+      <p class='taoxi'>卫衣</p>
+    </view>
+    <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/clokinds_08.png'></image>
+      <p class='taoxi_02'>针织毛衫</p>
+    </view>
+    <view class='qiucloth_view'>
+      <image class='qiu_img' src='../../image/clokinds_09.png'></image>
+      <p class='taoxi_02'>长袖卫衣</p>
+    </view> -->
+
+
+    <!-- 分割线 -->
+  </view>
+  <view class='fenge'>
+  </view>
+  <!-- 夏季商品栏 -->
+  <view class='qiuji'>
+    <p class='qiuji_p1'>夏季新品</p>
+    <p class='allgoods_p2' bindtap="bindViewTap">全部></p>
+  </view>
+  <!-- 夏季商品 -->
+   
+  <view class='winter'>
+    <view wx:for="{{imgUrls_02}}" wx:key="index" class='qiucloth_view'>
+      <image bindtap="bindViewTap" class='qiu_img' src='{{item.Clothing_Img}}'></image>
+      <p class='taoxi_03'>{{item.Clothing_Introduce}}</p>
+    </view>
+    <!-- <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/xiaclothes_02.png'></image>
+      <p class='taoxi_02'>速干系列</p>
+    </view>
+    <view class='qiucloth_view'>
+      <image class='qiu_img' src='../../image/xiaclothes_03.png'></image>
+      <p class='taoxi_02'>抗菌系列</p>
+    </view>
+    <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/xiaclothes_04.png'></image>
+      <p class='taoxi_03'>抗西游系列</p>
+    </view>
+    <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/xiaclothes_05.png'></image>
+      <p class='taoxi_02'>棉麻系列</p>
+    </view>
+    <view class='qiucloth_view'>
+      <image class='qiu_img' src='../../image/xiaclothes_06.png'></image>
+      <p class='taoxi_03'>运动风系列</p>
+    </view> -->
+  </view>
+  <view class='fenge'>
+  </view>
+  <!-- 夏季商品栏 -->
+  <view class='qiuji'>
+    <p class='qiuji_p1'>裤装</p>
+    <p class='allgoods_p2' bindtap="bindViewTap">全部></p>
+  </view>
+   <view class='pants'>
+    <view wx:for="{{imgUrls_04}}" wx:key="index" class='qiucloth_view'>
+      <image bindtap="bindViewTap" class='qiu_img' src='{{item.Clothing_Img}}'></image>
+      <p class='taoxi_02'>{{item.Clothing_Introduce}}</p>
+    </view>
+    <!-- <view class='qiucloth_view setthis'>
+      <image class='qiu_img' src='../../image/shose_02.png'></image>
+      <p class='taoxi_02'>正品皮鞋</p>
+    </view>
+    <view class='qiucloth_view'>
+      <image class='qiu_img' src='../../image/shose_03.png'></image>
+      <p class='taoxi'>凉鞋</p>
+    </view> -->
+  </view>
+ <view class='fengexian'>
+ </view>
+  <!-- 鞋类商品栏 -->
+  <view class='qiuji fen'>
+    <p class='qiuji_p1'>鞋类</p>
+    <p class='allgoods_p2' bindtap="bindViewTap">全部></p>
+  </view>
+  <!-- 鞋类商品 -->
+  <view class='shose'>
+    <view wx:for="{{imgUrls_03}}" wx:key="index" class='qiucloth_view setthis'>
+      <image bindtap="bindViewTap" class='qiu_img' src='{{item.Clothing_Img}}'></image>
+      <p class='taoxi_02'>{{item.Clothing_Introduce}}</p>
+    </view>
+  </view>
+ <!-- 分割线 -->
+ <view class='fengexian'>
+ </view>
+  <!-- 鞋类商品栏 -->
+  <view class='qiuji'>
+    <p class='qiuji_p1'>配饰</p>
+    <p class='allgoods_p2' bindtap="bindViewTap">全部></p>
+  </view>
+  <!-- 鞋类商品 -->
+  <view class='accessories'>
+    <view wx:for="{{imgUrls_05}}" wx:key="index" class='qiucloth_view setthis'>
+      <image bindtap="bindViewTap" class='qiu_img' src='{{item.Clothing_Img}}'></image>
+      <p class='taoxi_02'>{{item.Clothing_Introduce}}</p>
+    </view>
+  </view>
+</view>

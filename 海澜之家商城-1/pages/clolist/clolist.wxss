@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80rpx;
+  background: #edece8;
+  width: 100%;
+  
+}
+.nav {
+  width: 100%;
+  height: 80rpx;
+  background: #edece8;
+  position:fixed;
+}
+.select {
+  margin-top: 10rpx;
+  background: #fff;
+  width: 90%;
+  height: 50rpx;
+  font-size: 18rpx;
+  margin-left: 5%;
+}
+.saixuan {
+  position: relative;
+  width: 100%;
+  height: 90rpx;
+  border-bottom: 2px solid #edece8;
+  position:fixed;
+  background: #fff;
+}
+.saixuan p {
+  display: inline-block;
+  line-height: 90rpx;
+  margin-left:100rpx;
+  font-size: 27rpx; 
+}
+.sp1,.sp2 {
+  display: inline-block;
+  position: absolute;
+  height: 30rpx;
+  margin-left: 80rpx;
+  left: 170rpx;
+  top: 28rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.527);
+}
+.sp2 {
+  left: 420rpx;
+}
+.xinpin_p01 {
+margin-right: 90rpx;
+}
+.clothes_sell {
+  margin-left: 2%;
+  width: 100%;
+  background: red;
+  margin-top: 90rpx;
+}
+.clothes_sell_img {
+  width: 355rpx;
+  height: 355rpx;
+}
+.sell_p_01 {
+  display: block;
+  font-size: 30rpx;
+   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.sell_p_02 {
+  font-size: 30rpx;
+  color: red;
+}
+.clothes_sell_01 {
+  width: 49%;
+  height: 480rpx;
+  display: inline-block;
+  float: left;
+}
+.setright {
+  /* margin-right: 13rpx; */
+}

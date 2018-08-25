@@ -1,0 +1,57 @@
+<!--logs.wxml-->
+<view>
+
+<navigator open-type="switchTab" url="../buycar/buycar">
+      <view class="carts-icon {{scaleCart?'on':''}}">
+        <image src="/image/cart2.png"></image>
+        <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+      </view>
+    </navigator>
+  <!-- 轮播图 -->
+  <view>
+    <swiper class="sroll_top_view" indicator-dots="{{indicatorDots}}" autoplay='{{autoplay}}' interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <view bindtap="bindViewTap">
+            <image src="{{item.Clothing_Img}}" class='img'></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 文字信息 -->
+  <view class='intro'>
+    <p class='intro1'>HLA/海澜之家时尚渐变短袖T恤2018夏季新品舒适短袖polo衫男</p>
+    <p class='intro2'>时尚渐变 活力休闲 基础打底 穿着舒适</p>
+    <p class='intro3'>{{imgUrls[1].Clothing_Price}}</p>
+  </view>
+  <view class='midd'>
+    <view class='midd_img'>
+      <image src='../../image/确认.png'></image>
+    </view>
+    <p>支付满68.00元免邮</p>
+  </view>
+
+  <!-- 页面底部固定栏 -->
+  <view class='bottom'>
+    <view class='bottom_01'>
+      <view class='main_imgview' bindtap='tabSwitch'>
+        <image src='../../image/首页02.png'></image>
+        <p class='wenzi' >首页</p>
+      </view>
+
+    </view>
+    <view class='bottom_02' bindtap='addToCart'>
+      <p class='addcar'>加入购物车</p>
+    </view>
+    <view class='bottom_03'>
+      <p class='buynow'>立即购买</p>
+    </view>
+  </view>
+
+  <view class='test'>
+  </view>
+
+
+</view>

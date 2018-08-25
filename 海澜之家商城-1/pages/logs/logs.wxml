@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="box">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class='fenge'>
+  </view>
+
+  <view class='allgoods'>
+    <view class='qiuji'>
+      <p class='qiuji_p1'>商城订单</p>
+      <p class='allgoods_p2'>查看全部订单></p>
+    </view>
+    <view class='dingdan'>
+      <image class='dingdan_img' src='../../image/待付款.png'></image>
+      <p>待付款</p>
+    </view>
+    <view class='dingdan'>
+      <image class='dingdan_img' src='../../image/待发货.png'></image>
+      <p>待发货</p>
+    </view>
+    <view class='dingdan'>
+      <image class='dingdan_img' src='../../image/待收货.png'></image>
+      <p>待收货</p>
+    </view>
+    <view class='dingdan'>
+      <image class='dingdan_img' src='../../image/待评价.png'></image>
+      <p>待评价</p>
+    </view>
+    <view class='dingdan'>
+      <image class='dingdan_img' src='../../image/退款.png'></image>
+      <p>退款</p>
+    </view>
+  </view>
+
+  <view class='dizhilan'>
+    <view class='wode'>
+      <view class='dizhi_view'>
+        <image class='dizhi_img' src='../../image/定位.png'></image>
+      </view>
+      <p class='dizhi_p1'>我的地址</p>
+      <p class='dizhi_p2'>></p>
+
+    </view>
+    <view class='wode'>
+      <view class='dizhi_view'>
+        <image class='dizhi_img' src='../../image/优惠券.png'></image>
+      </view>
+      <p class='dizhi_p1'>我的优惠券</p>
+      <p class='dizhi_p2'>></p>
+
+    </view>
+  </view>
+
+</view>

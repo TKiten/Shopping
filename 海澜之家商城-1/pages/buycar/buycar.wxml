@@ -1,0 +1,70 @@
+<!-- <view class='box'>
+
+  <view class='empty'>
+    <view class='empty_img'>
+      <image src='../../image/购物车.png'></image>
+    </view>
+    <view class='empty_view1'>
+      <p>购物车还是空的</p>
+    </view>
+    <view class='empty_view2'>
+      <p>快去挑选自己喜欢的宝贝吧~</p>
+    </view>
+
+    <button class='but01' type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="tabSwitch">随便逛逛</button>
+  </view>
+
+
+</view> -->
+
+<view class="main">
+    <view wx:if="{{hasList}}">
+        <view class="cart-box">
+            <view class="cart-list" wx:for="{{carts}}" wx:key="{{index}}" wx:for="{{imgUrls}}" wx:key="{{index1}}">
+                <icon wx:if="{{item.selected}}" type="success" color="red" data-index="{{index}}"  class="cart-pro-select" bindtap="selectList"/>
+                <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList"/>
+                <navigator url="../details/details?id={{item.id}}"><image class="cart-thumb" src="{{item.Product_Img}}"></image></navigator>
+                <text class="cart-pro-name">{{item.Product_Name}}</text>
+                <text class="cart-pro-price">￥{{item.Product_Price}}</text>
+                <view class="cart-count-box">
+                    <text class="cart-count-down" bindtap="minusCount" data-obj="{{obj}}" data-index="{{index}}">-</text>
+                    <text class="cart-count-num">{{item.num}}</text>
+                    <text class="cart-count-add" bindtap="addCount" data-index="{{index}}">+</text>
+                </view>
+                <text class="cart-del" bindtap="deleteList" data-index="{{index}}">×</text>
+            </view>
+        </view>
+
+        <view class="cart-footer">
+            <icon wx:if="{{selectAllStatus}}" type="success_circle" color="#fff" class="total-select" bindtap="selectAll"/>
+            <icon wx:else type="circle" color="#fff" class="total-select" bindtap="selectAll"/>
+            <view class="order-icon">
+                <view bindtap="toPay"><image src="/image/icon3.png"></image></view>
+            </view>
+            <text>全选</text>
+            <text class="cart-toatl-price">￥{{totalPrice}}</text>
+        </view>
+    </view>
+    <view wx:else>
+        <view class='box'>
+
+  <view class='empty'>
+    <view class='empty_img'>
+      <image src='../../image/cart2.png'></image>
+    </view>
+    <view class='empty_view1'>
+      <p>购物车还是空的</p>
+    </view>
+    <view class='empty_view2'>
+      <p>快去挑选自己喜欢的宝贝吧~</p>
+    </view>
+
+    <button class='but01' type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="tabSwitch">随便逛逛</button>
+  </view>
+
+
+</view>
+    </view>
+</view>
